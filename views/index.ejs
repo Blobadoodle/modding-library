@@ -1,5 +1,30 @@
 <%- include('./partials/header.ejs') %>
+<%- include('./partials/navbar.ejs') %>
 
-<p> phone modding library homepage </p>
+<style>
+    body {
+        background-image: url('/images/back.jpg');
+        background-color: #181a1b; /* fallback if img not available */
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+<div class="phone-main w-50 mx-auto">
+    <p class="text-light fs-1 text-center"><b>Modding library</b></p>
+    <hr>
+    <p class="fs-4 phone-manufacturer-header">Google</p>
+    <ul style="list-style-type:none;">
+        <li><a href="/" class="fs-5 link-primary phone-name">Pixel 6</a></li>
+        <li><a href="/" class="fs-5 link-primary phone-name">Pixel 6a</a></li>
+        <li><a href="/" class="fs-5 link-primary phone-name">Pixel 5</a></li>
+    </ul>
+    <p class="fs-4 phone-manufacturer-header">Boogle</p>
+    <ul style="list-style-type:none;">
+        <li><a href="/" class="fs-5 link-primary phone-name">Bixel 6</a></li>
+        <li><a href="/" class="fs-5 link-primary phone-name">Bixel 6a</a></li>
+        <li><a href="/" class="fs-5 link-primary phone-name">Bixel 5</a></li>
+    </ul>
+</div>
 
 <%- include ('./partials/footer.ejs') %>
