@@ -1,0 +1,59 @@
+.text-input {
+    background-color: #181a1b;
+    border-color: #3c4144;
+}
+
+.text-input:focus {
+    background-color: #181a1b;
+    border-color: #3c4144;
+}
+
+
+@supports (backdrop-filter: blur(30px)) {
+    .phone-main {
+        backdrop-filter: blur(30px);
+        background-color:rgba(81, 81, 81, 0.4);
+        height: 95.5vh;
+        padding: 0.5%;
+        overflow: scroll;
+        scrollbar-color: #454a4d #202324;
+    }
+}
+
+
+@supports not (backdrop-filter: blur(30px)) {
+    .phone-main {
+        background-color:rgba(81, 81, 81, 0.85);
+        height: 95.5vh;
+        padding: 0.5%;
+        overflow: scroll;
+        scrollbar-color: #454a4d #202324;
+    }    
+}
+
+.phone-top-items {
+    padding:5%;
+    padding-bottom: 2%;
+}
+
+.info-text {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    color: #d9d9d9;
+}
+
+.phone-header {
+    color: #f8f9fa;
+}
+
+.phone-links {
+    padding-left: 5%;
+}
+
+.phone-part-map {
+    padding-left: 5%;
+}
+
+.phone-part-map-table {
+    border: 1px solid #373b3e;
+}

@@ -1,0 +1,64 @@
+<%- include('./partials/header.ejs') %>
+<%- include('./partials/navbar.ejs') %>
+
+<style>
+    body {
+        background-image: url('/images/back.jpg');
+        background-color: #181a1b; /* fallback if img not available */
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+<div class="phone-main w-50 mx-auto">
+    <div class="phone-top-items d-flex">
+        <img src="/images/realme7.png" width="40%" height="40%" alt="Realme 7 Image">
+        <div class="info" style="padding-left: 3%;">
+            <p class="phone-header fs-2">Realme 7</p>
+            <p class="fs-4 info-text">Model: RMX2151, RMX2155</p>
+            <p class="fs-4 info-text">Chipset: Mediatek Helio G95 (RM6785)</p>
+            <p class="fs-4 info-text">Card slot: microSDXC</p>
+            <p class="fs-4 info-text">Internal Storage: 6GB 4GB RAM, 64GB 6GB RAM, 128GB 8GB RAM</p>
+            <p class="fs-4 info-text">USB: USB Type-C 2.0, USB On-The-Go</p>
+            <p class="fs-4 info-text">Battery: 5000mAh</p>
+            <p class="fs-4 info-text">Display: IPS LCD, 90Hz, 480 nits (typ)</p>
+            <p class="fs-4 info-text">OS: Android 10, Realme UI 1.0 (max Android 12, Realme UI 3.0)</p>
+        </div>
+    </div>
+    <div class="phone-links">
+        <p class="fs-1 phone-header">Files</p>
+        <p class="fs-3 phone-header">TWRP</p>
+        <a href="/" class="fs-4 link-primary">TWRP-RUI2-recovery.img</a> <br>
+        <a href="/" class="fs-4 link-primary">TWRP_RUI2_R7.img</a> <br>
+        <a href="/" class="fs-4 link-primary">TWRP-3.5.2_10-1-RMX2001.img</a> <br>
+        <p class="fs-3 phone-header">VBMETA</p>
+        <a href="/" class="fs-4 link-primary">vbmeta.img</a> <br>
+        <p class="fs-4 info-text">Disable verification with fastboot flags:<br>fastboot --disable-verification --disable-verify flash vbmeta vbmeta.img</p>
+    </div>
+    <div class="phone-part-map">
+        <table class="table table-dark table-hover phone-part-map-table fs-5" style="width: fit-content">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Partition</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">audio_dsp</th>
+                    <td>/dev/block/sdc3</td>
+                </tr>
+                <tr>
+                    <th scope="row">boot</th>
+                    <td>/dev/block/sdc43</td>
+                </tr>
+                <tr>
+                    <th scope="row">boot_para</th>
+                    <td>/dev/block/sdc28</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<%- include ('./partials/footer.ejs') %>

@@ -1,7 +1,6 @@
 require('dotenv').config();
 
 const express = require('express');
-const helmet = require('helmet');
 const session = require('express-session');
 const morgan = require('morgan');
 
@@ -10,7 +9,7 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
-app.use(helmet());
+//app.use(helmet());
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
