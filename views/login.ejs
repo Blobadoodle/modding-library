@@ -1,0 +1,27 @@
+<%- include('./partials/header.ejs') %>
+<%- include('./partials/navbar.ejs') %>
+
+<style>
+    body {
+        background-image: url('/images/back.jpg');
+        background-color: #181a1b; /* fallback if img not available */
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+<div class="center">
+    <div class="login-box">
+        <form action="/api/login">
+            <div class="mb-3">
+                <input type="text" class="form-control text-input" id="username" placeholder="Username">
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control text-input" id="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+</div>
+
+<%- include ('./partials/footer.ejs') %>

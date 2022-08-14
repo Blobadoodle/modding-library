@@ -57,3 +57,30 @@
 .phone-part-map-table {
     border: 1px solid #373b3e;
 }
+
+@supports (backdrop-filter: blur(5px)) {
+    .login-box {
+        backdrop-filter: blur(5px);
+        background-color:rgba(81, 81, 81, 0.4);
+        border-radius: 25px;
+        padding: 20px;
+        border: 1px solid #d0ccc6;
+        font-size: large;
+    }
+}
+
+@supports not (backdrop-filter: blur(5px)) {
+    .login-box {
+        background-color:rgba(81, 81, 81, 0.85);
+        border-radius: 25px;
+        padding: 20px;
+        border: 1px solid #d0ccc6;
+    }
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 95.5vh;
+}
