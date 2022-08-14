@@ -1,16 +1,7 @@
 <%- include('./partials/header.ejs') %>
 
-<style>
-    body {
-        background-image: url('/images/back.jpg');
-        background-color: #181a1b; /* fallback if img not available */
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-</style>
-
 <div class="center">
-    <div class="login-box">
+    <div class="blur-box">
         <form action="/api/login">
             <div class="mb-3">
                 <input type="text" class="form-control text-input" id="username" placeholder="Username">
