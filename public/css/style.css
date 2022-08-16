@@ -70,6 +70,8 @@
         padding: 20px;
         border: 1px solid #d0ccc6;
         font-size: large;
+        width: fit-content;
+        overflow: scroll;
     }
 }
 
@@ -79,6 +81,8 @@
         border-radius: 25px;
         padding: 20px;
         border: 1px solid #d0ccc6;
+        width: fit-content;
+        overflow: scroll;
     }
 }
 
@@ -122,4 +126,8 @@ body {
     width: 15%;
     height: auto;
     padding-right: 15px;
+}
+
+.phone-box {
+    height: 90vh;
 }
