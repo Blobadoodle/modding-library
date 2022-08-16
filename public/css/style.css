@@ -62,9 +62,9 @@
     border: 1px solid #373b3e;
 }
 
-@supports (backdrop-filter: blur(5px)) {
+@supports (backdrop-filter: blur(10px)) {
     .blur-box {
-        backdrop-filter: blur(5px);
+        backdrop-filter: blur(10px);
         background-color:rgba(81, 81, 81, 0.4);
         border-radius: 25px;
         padding: 20px;
@@ -75,7 +75,7 @@
     }
 }
 
-@supports not (backdrop-filter: blur(5px)) {
+@supports not (backdrop-filter: blur(10px)) {
     .blur-box {
         background-color:rgba(81, 81, 81, 0.85);
         border-radius: 25px;
