@@ -92,7 +92,7 @@
 .phone-name {
     padding-top: 0px;
     padding-bottom: 0px;
-    padding-left: 15px;
+    vertical-align: middle;
 }
 
 .phone-manufacturer-header {
@@ -107,4 +107,16 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     scrollbar-color: #454a4d #202324;
+}
+
+.phone-card {
+    width: fit-content;
+    padding: 20px;
+    list-style-type:none;
+}
+
+.phone-image {
+    width: 15%;
+    height: auto;
+    padding-right: 15px;
 }
