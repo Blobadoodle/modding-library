@@ -1,0 +1,8 @@
+<a class="link-primary fs-4 phone-manufacturer-header" href="#<%= manufacturer.name %>Collapse" role="button" data-bs-toggle="collapse"><%= manufacturer.name %></a>
+<div class="collapse" id="<%= manufacturer.name %>Collapse">
+    <ul class="card card-body text-bg-dark phone-card">
+        <% for (phone of manufacturer.phones) { %>
+            <%- include('./phonelistitem.ejs', {phone: phone}) %>
+        <% } %>
+    </ul>
+</div> <br>

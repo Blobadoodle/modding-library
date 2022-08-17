@@ -3,23 +3,9 @@
 <div class="blur-main">
     <p class="text-light fs-1 text-center"><b>Modding library</b></p>
     <hr>
-    <a class="link-primary fs-4 phone-manufacturer-header" href="#googleCollapse" role="button" data-bs-toggle="collapse">Google</a>
-    <div class="collapse" id="googleCollapse">
-        <ul class="card card-body text-bg-dark phone-card">
-            <li><a href="/phone/e621" class="fs-5 link-primary phone-name"><img class="phone-image" src="/images/realme7.png" alt="Pixel 6">Pixel 6</a></li>
-            <li><a href="/" class="fs-5 link-primary phone-name"><img class="phone-image" src="/images/realme7.png" alt="Pixel 6">Pixel 6a</a></li>
-            <li><a href="/" class="fs-5 link-primary phone-name"><img class="phone-image" src="/images/realme7.png" alt="Pixel 6">Pixel 5</a></li>
-        </ul>
-    </div> <br>
-
-    <a class="link-primary fs-4 phone-manufacturer-header" href="#boogleCollapse" role="button" data-bs-toggle="collapse">Boogle</a>
-    <div class="collapse" id="boogleCollapse">
-        <ul class="card card-body text-bg-dark phone-card">
-            <li><a href="/" class="fs-5 link-primary phone-name"><img class="phone-image" src="/images/realme7.png" alt="Pixel 6">Bixel 6</a></li>
-            <li><a href="/" class="fs-5 link-primary phone-name"><img class="phone-image" src="/images/realme7.png" alt="Pixel 6">Bixel 6a</a></li>
-            <li><a href="/" class="fs-5 link-primary phone-name"><img class="phone-image" src="/images/realme7.png" alt="Pixel 6">Bixel 5</a></li>
-        </ul>
-    </div>
+    <% for(manufacturer of phones) { %>
+        <%- include('./partials/phonelist.ejs', {manufacturer}) %>
+    <% } %>
 </div>
 
 <%- include ('./partials/footer.ejs') %>
