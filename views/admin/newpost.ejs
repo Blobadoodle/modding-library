@@ -12,39 +12,39 @@
         <form action="/api/post">
             <div class="mb-3">
                 <label for="phoneName" class="form-label">Name *</label>
-                <input type="text" class="text-input text-light bg-white-50 form-control" id="phoneName" required>
+                <input type="text" class="text-input text-light bg-white-50 form-control" id="phoneName" required name="name">
             </div>
             <div class="mb-3">
                 <label for="phoneModel" class="form-label">Model *</label>
-                <input type="text" class="text-input text-light bg-white-50 form-control" id="phoneModel" required>
+                <input type="text" class="text-input text-light bg-white-50 form-control" id="phoneModel" required name="model">
             </div>
             <div class="mb-3">
                 <label for="phoneChipset" class="form-label">Chipset *</label>
-                <input type="text" class="text-input text-light bg-white-50 form-control" id="phoneChipset" required>
+                <input type="text" class="text-input text-light bg-white-50 form-control" id="phoneChipset" required name="chipset">
             </div>
             <div class="mb-3">
                 <label for="phoneCard" class="form-label">Card slot</label>
-                <input type="text" class="text-input text-light bg-white-50 form-control" id="phoneCard">
+                <input type="text" class="text-input text-light bg-white-50 form-control" id="phoneCard" name="sdcard">
             </div>
             <div class="mb-3">
                 <label for="phoneStorage" class="form-label">Internal Storage</label>
-                <input type="text" class="text-input text-light bg-white-50 form-control" id="phoneStorage">
+                <input type="text" class="text-input text-light bg-white-50 form-control" id="phoneStorage" name="storage">
             </div>
             <div class="mb-3">
                 <label for="phoneUSB" class="form-label">USB</label>
-                <input type="text" class="text-input text-light bg-white-50 form-control" id="phoneUSB">
+                <input type="text" class="text-input text-light bg-white-50 form-control" id="phoneUSB" name="usb">
             </div>
             <div class="mb-3">
                 <label for="phoneBattery" class="form-label">Battery</label>
-                <input type="text" class="text-input text-light bg-white-50 form-control" id="phoneBattery">
+                <input type="text" class="text-input text-light bg-white-50 form-control" id="phoneBattery" name="battery">
             </div>
             <div class="mb-3">
                 <label for="phoneDisplay" class="form-label">Display</label>
-                <input type="text" class="text-input text-light bg-white-50 form-control" id="phoneDisplay">
+                <input type="text" class="text-input text-light bg-white-50 form-control" id="phoneDisplay" name="display">
             </div>
             <div class="mb-3">
                 <label for="phoneOS" class="form-label">OS</label>
-                <input type="text" class="text-input text-light bg-white-50 form-control" id="phoneOS">
+                <input type="text" class="text-input text-light bg-white-50 form-control" id="phoneOS" name="os">
             </div>
             <hr>
             <div class="mb-3">
@@ -52,16 +52,16 @@
             </div>
             <div class="mb-3">
                 <label for="phoneImage" class="form-label">Image (url) *</label>
-                <input type="url" class="text-input text-light bg-white-50 form-control" id="phoneImage" required>
+                <input type="url" class="text-input text-light bg-white-50 form-control" id="phoneImage" required name="image">
             </div>
             <div class="mb-3">
                 <button class="btn btn-outline-primary">Add section</button>
             </div>
-            <input type="hidden" id="phoneSections" name="phoneSections" value="none">
+            <input type="hidden" id="phoneSections" name="sections" value="none">
             <hr>
             <div class="mb-3">
                 <label for="phonePartMap" class="form-label">Partition map (ls -l)</label>
-                <textarea class="form-control text-input text-light bg-white-50"></textarea>
+                <textarea class="form-control text-input text-light bg-white-50" id="phonePartMap" name="partmap"></textarea>
             </div>
             <button class="btn btn-outline-primary w-100">Submit</button>
         </form>
