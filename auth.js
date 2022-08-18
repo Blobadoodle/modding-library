@@ -5,12 +5,9 @@ const LocalStrategy = require('passport-local');
 
 function init() {
     return new LocalStrategy((username, password, done) => {
-        console.log(`Username :${username} Password: ${password}`);
         User.findOne({username}, (err, user) => {
-            console.log(err);
             if(err) return done(err);
             if(!user) return done(null, false);
-            console.log(user);
 
             bcrypt.compare(password, user.password, (err, result) => {
                 if(err) return done(err);

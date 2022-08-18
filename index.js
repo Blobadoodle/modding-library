@@ -5,7 +5,6 @@ const session = require('express-session');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const passport = require('passport');
-const User = require('./models/User');
 
 const port = process.env.PORT | 3000;
 const app = express();
@@ -36,6 +35,4 @@ mongoose.connect(process.env.DBURI, {
 
 app.listen(port, async () => {
     console.log(`Listening on port ${port}`);
-    const users = await User.find();
-    console.log(users);
 });
