@@ -22,11 +22,14 @@
             </div>
           </li>
         </ul>
-        <% if (!user) { %>
-          <a href="/login"><button class="btn btn-primary">Login</button></a>
-        <% } else { %>
-          <a href="/admin"><button class="btn btn-primary">Admin</button></a>
-        <% } %>
+        <div class="mb-2">
+          <% if (!user) { %>
+            <a href="/login"><button class="btn btn-primary">Login</button></a>
+          <% } else { %>
+            <a href="/admin"><button class="btn btn-primary">Admin</button></a>
+            <a href="/api/logout"><button class="btn btn-outline-danger">Logout</button></a>
+          <% } %>
+        </div>
         </div>
     </div>
 </nav>
