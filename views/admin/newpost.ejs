@@ -11,6 +11,14 @@
         <hr>
         <form method="post" action="/api/phone">
             <div class="mb-3">
+                <label for="phoneBrand" class="form-label">Brand *</label>
+                <select class="form-select text-light text-input bg-white-50" name="brand" id="phoneBrand">
+                    <% for(brand of brands) { %>
+                    <option value="<%= brand._id %>"><%= brand.name %></option>
+                    <% } %>
+                </select>
+            </div>
+            <div class="mb-3">
                 <label for="phoneName" class="form-label">Name *</label>
                 <input type="text" class="text-input text-light bg-white-50 form-control" id="phoneName" required name="name">
             </div>

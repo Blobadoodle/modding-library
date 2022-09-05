@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const Manufacturer = require('../models/Manufacturer');
 
 router.all('*', (req, res, next) => {
     if(req.isAuthenticated()) {
@@ -12,8 +13,9 @@ router.get('/', (req, res) => {
     res.render('admin/index', {user: req.user?.username}); 
 });
 
-router.get('/newpost', (req, res) => {
-    res.render('admin/newpost', {user: req.user?.username}); 
+router.get('/newpost', async (req, res) => {
+    const brands = await Manufacturer.find({});
+    res.render('admin/newpost', {user: req.user?.username, brands}); 
 });
 
 router.get('/newbrand', (req, res) => {
