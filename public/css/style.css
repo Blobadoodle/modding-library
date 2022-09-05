@@ -15,7 +15,7 @@
         background-color:rgba(81, 81, 81, 0.4);
         height: 95.5vh;
         padding: 0.5%;
-        overflow: scroll;
+        overflow: auto;
         margin-left: auto;
         margin-right: auto;
         width: 50%;
@@ -28,7 +28,7 @@
         background-color:rgba(81, 81, 81, 0.85);
         height: 95.5vh;
         padding: 0.5%;
-        overflow: scroll;
+        overflow: auto;
         margin-left: auto;
         margin-right: auto;
         width: 50%;
@@ -71,7 +71,7 @@
         border: 1px solid #d0ccc6;
         font-size: large;
         width: fit-content;
-        overflow: scroll;
+        overflow: auto;
     }
 }
 
@@ -82,7 +82,7 @@
         padding: 20px;
         border: 1px solid #d0ccc6;
         width: fit-content;
-        overflow: scroll;
+        overflow: auto;
     }
 }
 
