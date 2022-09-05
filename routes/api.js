@@ -22,4 +22,10 @@ router.post('/phone', passport.authenticate('session', { failureRedirect: '/logi
     res.redirect('/admin/newpost');
 });
 
+router.get('/logout', (req, res) => {
+    req.logout(() => {
+        res.redirect('/');
+    });
+});
+
 module.exports = router;
