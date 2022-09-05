@@ -25,6 +25,17 @@
         "semi": [
             "error",
             "always"
+        ],
+        "keyword-spacing": [
+            "error",
+            {
+                "after": true,
+                "overrides": {
+                    "if": {"after": false},
+                    "catch": {"after": false},
+                    "for": {"after": false}
+                }
+            }
         ]
     }
 }
