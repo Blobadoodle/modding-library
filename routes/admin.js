@@ -1,13 +1,23 @@
 const router = require('express').Router();
-const passport = require('passport');
 
-router.get('/', passport.authenticate('session', { failureRedirect: '/login' }), (req, res) => {
+router.all('*', (req, res, next) => {
+    if(req.isAuthenticated()) {
+        next();
+    } else {
+        res.redirect('/login');
+    }
+});
+
+router.get('/', (req, res) => {
     res.render('admin/index'); 
 });
 
-router.get('/newpost', passport.authenticate('session', { failureRedirect: '/login' }), (req, res) => {
+router.get('/newpost', (req, res) => {
     res.render('admin/newpost'); 
 });
 
+router.get('/newbrand', (req, res) => {
+    res.render('admin/newbrand'); 
+});
 
 module.exports = router;
