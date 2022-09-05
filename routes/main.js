@@ -1,15 +1,15 @@
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
-    res.render('index', {phones: [ {name: 'Realme', phones: [{name: 'Realme 7', image: '/images/realme7.png', _id: 'e621'}] } ]}); 
+    res.render('index', {phones: [ {name: 'Realme', phones: [{name: 'Realme 7', image: '/images/realme7.png', _id: 'e621'}] } ], user: req.user?.username}); 
 });
 
 router.get('/phone/e621', (req, res) => {
-    res.render('phone');
+    res.render('phone', {user: req.user?.username});
 });
 
 router.get('/login', (req, res) => {
-    res.render('login');
+    res.render('login', {user: req.user?.username});
 });
 
 module.exports = router;

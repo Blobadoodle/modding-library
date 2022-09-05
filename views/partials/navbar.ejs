@@ -22,7 +22,11 @@
             </div>
           </li>
         </ul>
-        <a href="/login"><button class="btn btn-primary">Login</button></a>
+        <% if (!user) { %>
+          <a href="/login"><button class="btn btn-primary">Login</button></a>
+        <% } else { %>
+          <a href="/admin"><button class="btn btn-primary">Admin</button></a>
+        <% } %>
         </div>
     </div>
 </nav>

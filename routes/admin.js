@@ -9,15 +9,15 @@ router.all('*', (req, res, next) => {
 });
 
 router.get('/', (req, res) => {
-    res.render('admin/index'); 
+    res.render('admin/index', {user: req.user?.username}); 
 });
 
 router.get('/newpost', (req, res) => {
-    res.render('admin/newpost'); 
+    res.render('admin/newpost', {user: req.user?.username}); 
 });
 
 router.get('/newbrand', (req, res) => {
-    res.render('admin/newbrand'); 
+    res.render('admin/newbrand', {user: req.user?.username}); 
 });
 
 module.exports = router;
