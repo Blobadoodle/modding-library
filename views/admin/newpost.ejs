@@ -1,5 +1,60 @@
 <%- include('../partials/header.ejs') %>
 
+<script>
+    let ids = [];
+
+    function makeId() {
+        let result = '';
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+        for(let i = 0; i < 10; i++ ) {
+            result += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        if(ids.includes(result)) { // if in the tiny chance the id already exists create a new one
+            return makeId(); // fancy recursive function
+        } else {
+            return result
+        }
+    }
+
+    function addLink(id) {
+        id.innerHTML += `
+            <div class="input-group mb-3">
+                <input type="text" class="text-input text-light bg-white-50 form-control form-control" id="sectionLinkName" required placeholder="Link Name" aria-label="Link Name">
+                <input type="text" class="text-input text-light bg-white-50 form-control form-control" id="sectionLinkURL" required placeholder="Link URL" aria-label="Link URL">
+            </div>
+        `;
+    }
+
+    function addSection() {
+        let id = makeId();
+        document.querySelector('#sections').innerHTML += `
+            <hr>
+            <div class="mb-3">
+                <input type="text" class="text-input text-light bg-white-50 form-control" id="${id}name" required placeholder="Section Name" aria-label="Section Name">
+            </div>
+            <div id="${id}">
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-outline-primary" onclick="addLink(${id});" type="button">Add Link</button>
+            </div>
+        `;
+        ids.push(id);
+    }
+
+    function formSubmit() {
+        let sections = {};
+        for(let id of ids ) {
+            let sectionName = document.querySelector(`#${id}name`).value;
+            sections[sectionName] = {};
+            for(let link of document.querySelector(`#${id}`).children) {
+               sections[sectionName][link.children[0].value] = link.children[1].value;
+            }
+        }
+        document.querySelector('#phoneSections').value = JSON.stringify(sections);
+        document.querySelector('form').submit();
+    }
+</script>
+
 <div class="center">
     <div class="blur-box text-light phone-box">
         <p>You are logged in as: <%= user %></p>
@@ -62,8 +117,10 @@
                 <label for="phoneImage" class="form-label">Image (url) *</label>
                 <input type="url" class="text-input text-light bg-white-50 form-control" id="phoneImage" required name="image">
             </div>
+            <div id="sections">
+            </div>
             <div class="mb-3">
-                <button class="btn btn-outline-primary">Add section</button>
+                <button class="btn btn-outline-primary" onclick="addSection();" type="button">Add section</button>
             </div>
             <input type="hidden" id="phoneSections" name="sections" value="none">
             <hr>
@@ -71,7 +128,7 @@
                 <label for="phonePartMap" class="form-label">Partition map (ls -l)</label>
                 <textarea class="form-control text-input text-light bg-white-50" id="phonePartMap" name="partmap"></textarea>
             </div>
-            <button class="btn btn-outline-primary w-100">Submit</button>
+            <button type="button" class="btn btn-outline-primary w-100" onclick="formSubmit();">Submit</button>
         </form>
     </div>
 </div>
