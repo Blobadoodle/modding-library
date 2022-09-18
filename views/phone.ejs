@@ -2,6 +2,10 @@
 
 <div class="blur-main">
     <div class="phone-top-items d-flex">
+        <% if(user) { %><div class="d-inline-block position-absolute end-0 me-5">
+            <button class="btn btn-danger">Delete</button>
+            <button class="btn btn-warning">Edit</button>
+        </div> <% } %>
         <img src="/images/realme7.png" width="40%" height="40%" alt="Realme 7 Image">
         <div class="info" style="padding-left: 3%;">
             <p class="phone-header fs-2">Realme 7</p>
