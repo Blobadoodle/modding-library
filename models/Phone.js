@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const PhoneSchema = new mongoose.Schema({
-    manufacturer: {type: mongoose.Schema.Types.ObjectId, ref: 'Manufacturer' },
+    brand: {type: mongoose.Schema.Types.ObjectId, ref: 'Manufacturer' },
     name: {type: String, required: true},
     model: {type: String, required: true},
     chipset: {type: String, required: true},

@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const passport = require('passport');
 const Manufacturer = require('../models/Manufacturer.js');
+const Phone = require('../models/Phone.js');
 
 // Non-priviliged gateways
 
@@ -18,8 +19,14 @@ router.all('*', (req, res, next) => {
 
 // Privileged gateways
 
-router.post('/phone', (req, res) => {
-    console.log(req.body);
+router.post('/phone', async (req, res) => {
+    const phone = { ...req.body };
+    phone.sections = JSON.parse(phone.sections);
+    phone.addedby = req.user._id;
+
+    const newphone = new Phone(phone);
+    await newphone.save();
+    console.log(phone);
     res.redirect('/admin/newpost');
 });
 
@@ -27,7 +34,7 @@ router.post('/brand', async (req, res) => {
     const { name } = req.body;
     const brand = new Manufacturer({
         name,
-        addedby: req.user.username
+        addedby: req.user._id
     });
     await brand.save();
     res.redirect('/admin/newbrand');

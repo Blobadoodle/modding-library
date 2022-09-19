@@ -5,7 +5,7 @@ const ManufacturerSchema = new mongoose.Schema({
     phones: [{
         type: mongoose.Schema.Types.ObjectId, ref: 'Phone'    
     }],
-    addedby: {type: String}
+    addedby: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 });
 
 module.exports = new mongoose.model('Manufacturer', ManufacturerSchema);
