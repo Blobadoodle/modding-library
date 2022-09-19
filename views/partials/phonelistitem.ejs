@@ -1,1 +1,1 @@
-<li><a href="/phone/<%= phone._id %>" class="fs-5 link-primary phone-name"><img class="phone-image" src="<%= phone.image %>" alt="<%= phone.name %>"><%= phone.name %></a></li>
+<li><a href="/phone/<%= encodeURIComponent(phone.name) %>" class="fs-5 link-primary phone-name"><img class="phone-image" src="<%= phone.image %>" alt="<%= phone.name %>"><%= phone.name %></a></li>

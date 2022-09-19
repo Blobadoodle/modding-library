@@ -6,29 +6,31 @@
             <button class="btn btn-danger">Delete</button>
             <button class="btn btn-warning">Edit</button>
         </div> <% } %>
-        <img src="/images/realme7.png" width="40%" height="40%" alt="Realme 7 Image">
+        <img src="<%= phone.image %>" width="40%" height="40%" alt="<%= phone.name %> Image">
         <div class="info" style="padding-left: 3%;">
-            <p class="phone-header fs-2">Realme 7</p>
-            <p class="fs-4 info-text">Model: RMX2151, RMX2155</p>
-            <p class="fs-4 info-text">Chipset: Mediatek Helio G95 (RM6785)</p>
-            <p class="fs-4 info-text">Card slot: microSDXC</p>
-            <p class="fs-4 info-text">Internal Storage: 6GB 4GB RAM, 64GB 6GB RAM, 128GB 8GB RAM</p>
-            <p class="fs-4 info-text">USB: USB Type-C 2.0, USB On-The-Go</p>
-            <p class="fs-4 info-text">Battery: 5000mAh</p>
-            <p class="fs-4 info-text">Display: IPS LCD, 90Hz, 480 nits (typ)</p>
-            <p class="fs-4 info-text">OS: Android 10, Realme UI 1.0 (max Android 12, Realme UI 3.0)</p>
+            <p class="phone-header fs-2"><%= phone.name %></p>
+            <p class="fs-4 info-text">Model: <%= phone.model %></p>
+            <p class="fs-4 info-text">Chipset: <%= phone.chipset %></p>
+            <p class="fs-4 info-text">Card slot: <%= phone.sdcard ?? 'N/A' %></p>
+            <p class="fs-4 info-text">Internal Storage: <%= phone.storage %></p>
+            <p class="fs-4 info-text">USB: <%= phone.usb %></p>
+            <p class="fs-4 info-text">Battery: <%= phone.battery %></p>
+            <p class="fs-4 info-text">Display: <%= phone.display %></p>
+            <p class="fs-4 info-text">OS: <%= phone.os %></p>
         </div>
     </div>
     <div class="phone-links">
-        <p class="fs-1 phone-header">Files</p>
-        <p class="fs-3 phone-header">TWRP</p>
-        <a href="/" class="fs-4 link-primary">TWRP-RUI2-recovery.img</a> <br>
-        <a href="/" class="fs-4 link-primary">TWRP_RUI2_R7.img</a> <br>
-        <a href="/" class="fs-4 link-primary">TWRP-3.5.2_10-1-RMX2001.img</a> <br>
-        <p class="fs-3 phone-header">VBMETA</p>
-        <a href="/" class="fs-4 link-primary">vbmeta.img</a> <br>
-        <p class="fs-4 info-text">Disable verification with fastboot flags:<br>fastboot --disable-verification --disable-verify flash vbmeta vbmeta.img</p>
+        <% if(phone.sections) { %>
+            <p class="fs-1 phone-header">Links</p>
+            <% for(const section in phone.sections) { %>
+                <p class="fs-3 phone-header"><%= section %></p>
+                <% for(const link in phone.sections[section]) { %>
+                    <a href="<%= phone.sections[section][link] %>" class="fs-4 link-primary"><%= link %></a> <br>
+                <% } %>
+            <% } %>
+        <% } %>
     </div>
+    <br>
     <div class="phone-part-map">
         <table class="table table-dark table-hover phone-part-map-table fs-5" style="width: fit-content">
             <thead>
