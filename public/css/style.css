@@ -8,17 +8,30 @@
     border-color: #3c4144;
 }
 
+.blur-main {
+    height: 95.5vh;
+    padding: 0.5%;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (orientation: landscape) {
+    .blur-main {
+        width: 50%;
+    }
+}
+
+@media (orientation: portrait) {
+    .blur-main {
+        width: 100%;
+    }
+}
 
 @supports (backdrop-filter: blur(30px)) {
     .blur-main {
         backdrop-filter: blur(30px);
         background-color:rgba(81, 81, 81, 0.4);
-        height: 95.5vh;
-        padding: 0.5%;
-        overflow: auto;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
     }
 }
 
@@ -26,12 +39,6 @@
 @supports not (backdrop-filter: blur(30px)) {
     .blur-main {
         background-color:rgba(81, 81, 81, 0.85);
-        height: 95.5vh;
-        padding: 0.5%;
-        overflow: auto;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
     }    
 }
 
