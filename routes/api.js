@@ -9,6 +9,24 @@ router.post('/login', passport.authenticate('local', { failureRedirect: '/login'
     res.redirect('/admin');
 });
 
+router.get('/search', async (req, res) => {
+    const searchstring = decodeURIComponent(req.query.q);
+    if(!searchstring) return res.redirect('/');
+
+    const phones = await Phone
+        .find(
+            { $text: { $search: searchstring }},
+            { score: { $meta: 'textScore'}}
+        )
+        .sort({ score: { $meta: 'textScore'}})
+        .limit(10);
+    
+    if(phones == []) return res.status(404).json({phones: []});
+    if(!phones) return res.status(500).json({phones: []});
+
+    return res.json({phones});
+});
+
 router.all('*', (req, res, next) => {
     if(req.isAuthenticated()) {
         next();

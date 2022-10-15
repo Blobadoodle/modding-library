@@ -16,5 +16,6 @@ const PhoneSchema = new mongoose.Schema({
     partmap: {type: String, required: false},
     addedby: {type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 });
+PhoneSchema.index({name: 'text', model: 'text', chipset: 'text'});
 
 module.exports = new mongoose.model('Phone', PhoneSchema);
